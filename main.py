@@ -30,14 +30,15 @@ def main() -> None:
                 name=player_guild["name"],
                 description=player_guild["description"]
             )
-        Player.objects.create(
-            nickname=player_name,
-            email=player_email,
-            bio=player_bio,
-            race=race_obj,
-            guild=guild_object
-            if player_guild else None
-        )
+        if player_name:
+            Player.objects.create(
+                nickname=player_name,
+                email=player_email,
+                bio=player_bio,
+                race=race_obj,
+                guild=guild_object
+                if player_guild else None
+            )
 
 
 if __name__ == "__main__":
