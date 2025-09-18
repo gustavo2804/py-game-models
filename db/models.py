@@ -11,7 +11,7 @@ class Race(models.Model):
     name = models.CharField(max_length=255,
                             choices=STATUS_CHOICES,
                             unique=True)
-    description = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True)
 
 
 class Skill(models.Model):
